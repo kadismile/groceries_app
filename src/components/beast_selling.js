@@ -22,11 +22,12 @@ function BestSelling () {
       <div>
         {
           products.map((product, index)=> {
+            let image = product.productVariantImage ? `${url}/${product.productVariantImage}` : "/img/placeholder-image.png"
             return (
               <>
                 <div className="news-list-item">
                   <div className="list-image">
-                    <img className="product-image" alt={product.name} src={`${url}/${product.productVariantImage}`} width={100} height={100} />
+                    <img className="product-image" alt={product.name} src={image} width={100} height={100} />
                   </div>
                   <div className="list-content">
                     <h2 className="list-title max-w-80"><a href="product-detail.html"></a> {product.name}</h2>
