@@ -6,6 +6,7 @@ import styled from '@emotion/styled/macro'
 import {keyframes} from '@emotion/core'
 import {Dialog as ReachDialog} from '@reach/dialog'
 import {FaSpinner} from 'react-icons/fa'
+import React from "react";
 
 const spin = keyframes({
   '0%': {transform: 'rotate(0deg)'},
@@ -70,6 +71,12 @@ function Loader() {
   )
 }
 
+function PageLoader() {
+  return (
+    <img src="/img/loader.gif" className="loader" alt=""/>
+  )
+}
+
 const Link = styled(RouterLink)({
   color: "indigo",
   ':hover': {
@@ -130,5 +137,6 @@ export {
   FormGroup,
   FullPageSpinner,
   Link,
-  Loader
+  Loader,
+  PageLoader
 }

@@ -38,6 +38,18 @@ function getRandomProducts() {
   return client(`${url.BASE_URL}/products/get-random-products`).then( data => data)
 }
 
+function getProductCategory(data) {
+  return client(`${url.BASE_URL}/products/product-category/${data}`).then( data => data)
+}
+
+function getVariants(data) {
+  return client(`${url.BASE_URL}/products/product-variant/${data}`).then( data => data)
+}
+
+function getProductVariant(data) {
+  return client(`${url.BASE_URL}/products//variant/${data}`).then( data => data)
+}
+
 
 function getToken() {
   let token = window.localStorage.getItem(localStorageKey);
@@ -58,5 +70,6 @@ function logout() {
 }
 
 
-export {login, register, getToken, isLoggedIn, getUser, getRandomProducts}
+export {login, register, getToken, isLoggedIn, getUser, getRandomProducts,
+  getProductCategory, getVariants, getProductVariant}
 export {logout} from './api-client'

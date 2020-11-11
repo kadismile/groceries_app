@@ -18,13 +18,15 @@ async function client(endpoint, {data, type, headers: customHeaders, ...customCo
     headers: customConfig.customHeaders ? customConfig.customHeaders : headers,
   };
 
+  console.log(endpoint)
+
   return window
     .fetch(`${endpoint}`, config)
     .then(async response => {
       return await response.json()
     }).catch((err)=>{
-       logout();
-       window.location.replace("/");
+       //logout();
+       //window.location.replace("/");
       })
 }
 

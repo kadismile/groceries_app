@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 function HomeCategoryList () {
   return (
@@ -17,12 +18,12 @@ function HomeCategoryList () {
           </a>
         </div>
         <div className="col-3 center-item text-center mb-15">
-          <a href="product-list.html">
+          <Link to="/category/u3IDfiUVMoAHwM5grC">
             <div className="provide-item blue-bg">
               <img src="/img/drinks.png" alt="" />
               <h4 className="w-text">Drinks</h4>
             </div>
-          </a>
+          </Link>
         </div>
         <div className="col-3 text-center mb-15">
           <a href="product-list.html">
