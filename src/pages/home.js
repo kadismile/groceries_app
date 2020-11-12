@@ -47,7 +47,7 @@ function Home () {
         </div>
       </footer>
     </main>
-        <a className="bouble-link white txt-orange" href="product-basket.html"><i className="fa fa-shopping-basket"></i></a>
+
    </>
   )
 }

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {getVariants} from "../../utils/auth-client";
 import {PageLoader} from "../lib";
 import {Link} from "react-router-dom";
+import {CartButton} from "./cart_button";
 
 function ProductVariants (props) {
   console.log("props ", props)
@@ -13,7 +14,6 @@ function ProductVariants (props) {
     ( async ()=> {
       let data = await getVariants(productId)
       setProduct(data.data)
-      console.log("data ____", data )
     })()
   }, 1000)
 
@@ -50,14 +50,14 @@ function ProductVariants (props) {
               <>
                 <div className="news-list-item">
                     <div className="list-image">
-                      <img alt="" src={`${url}/${prVariant.productVariantImage}`} width={100} height={100}  />
+                      <img alt="" crossOrigin src={`${url}/${prVariant.productVariantImage}`} width={100} height={100}  />
                     </div>
                     <div className="list-content">
                       <h2 className="list-title max-w-80">
                         <Link to={`/product-variant/`+`${prVariant._id}`}> {prVariant.name} </Link>
                     </h2>
                       <span className="item-price"> ₦{prVariant.price}</span>
-                      <a href="product-basket.html" className="add-chart"><i className="fa fa-shopping-cart" /></a>
+                      <CartButton product={prVariant} />
                     </div>
                   </div>
                 <div className="form-mini-divider" />

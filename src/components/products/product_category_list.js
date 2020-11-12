@@ -28,7 +28,7 @@ function ProductCatList (props) {
               return(
                 <div className="product-item v2 mb-15 mr-2" key={index}>
                   <Link to={`/product/${product._id}`} state={product} >
-                    <img className="product-image" alt="" src={`${url}/${product.productImage}`} />
+                    <img className="product-image" alt="" crossOrigin src={`${url}/${product.productImage}`} />
                     <h2 className="product-title">{product.name}</h2>
                   </Link>
                 </div>

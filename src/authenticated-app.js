@@ -16,6 +16,7 @@ import {ProductCatList} from "./components/products/product_category_list";
 import {ProductVariants} from "./components/products/product_variants";
 import {ProductDetail} from "./components/products/product_details";
 import {ProductDescription} from "./components/product_description";
+import {Cart} from "./components/products/cart";
 
 
 function ErrorFallback({error}) {
@@ -49,6 +50,7 @@ function AuthenticatedApp() {
             <Route path="/category/:category_name" exact render={props => <ProductCatList {...props} />} />
             <Route path="*" exact render={props => <NotFoud {...props} />} />
           </Switch>
+            <Cart />
           </div>
         </Router>
         
