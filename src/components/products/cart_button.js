@@ -1,51 +1,62 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useAuth } from "../../context/auth-context";
 function CartButton (props) {
-  const [loading, setLoading] = useState(false)
+
   const {addToCart} = useAuth();
   const product = props.product;
 
-  console.log("product ---", product)
-
   const displayCart = () => {
-    let cart = localStorage.getItem('cart')
-    cart = JSON.parse(cart)
-    let findProduct = cart.find((v)=> {
-      return v._id === product._id
-    })
-    return !findProduct;
-  }
+   let cart = localStorage.getItem('cart')
+   if (cart) {
+     cart = JSON.parse(cart)
+     let findProduct = cart.find( v => v._id === product._id)
+     return !findProduct;
+   }
+ }
+
   const addTocart = () => {
-    setLoading(true)
-    setTimeout(()=> {
-      let cart = localStorage.getItem('cart')
-      if (!cart.length) {
-        localStorage.setItem('cart', JSON.stringify([product]))
-      } else {
-        cart = JSON.parse(cart)
-        let existingProduct = cart.find((data) => data._id === product._id)
-        if(existingProduct) return
-        let value = JSON.stringify([...cart, product])
-        localStorage.setItem('cart', value)
-        addToCart(value)
-      }
-    }, 1500)
-
-
-
+    let cart = localStorage.getItem('cart')
+    if (!cart.length) {
+      let item = [product]
+      item.forEach((item)=> {
+        item.count = 1
+        item.total = item.count * item.price
+      })
+      localStorage.setItem('cart', JSON.stringify(item))
+    } else {
+      cart = JSON.parse(cart)
+      let existingProduct = cart.find((data) => data._id === product._id)
+      if(existingProduct) return
+      let item = [product]
+      item.forEach((item)=> {
+        item.count = 1
+        item.total = item.count * item.price
+      })
+      let value = JSON.stringify([...cart, ...item ])
+      localStorage.setItem('cart', value)
+      addToCart(value)
+    }
   }
 
-  console.log("display ____", displayCart())
+  const {bigButton} = props
   return (
     <>
       {
-        displayCart() ? <span className="cart-btn"  onClick={()=> addTocart() }> <i className="fa fa-shopping-basket" style={{color: "green"}} /></span> :
+        !bigButton ?
+          //small Button
+        !displayCart() ? <span className="cart-btn"  onClick={()=> addTocart() }> <i className="fa fa-shopping-basket" style={{color: "green"}} /></span> :
           <span className="cart-btn" onClick={()=> addTocart() }> <i className="fa fa-shopping-basket" /></span>
-      }
 
+          :
+          //Big Button
+          !displayCart() ?
+            <button className="button circle block orange" style={{backgroundColor: "#2eb18d"}} onClick={()=> addTocart() } ><i className="fa fa-shopping-basket" /> Add to Cart</button> :
+            <button className="button circle block orange" onClick={()=> addTocart() } ><i className="fa fa-shopping-basket" /> Add to Cart</button>
+      }
 
     </>
   )
 }
+
 
 export {CartButton}

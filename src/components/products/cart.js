@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useAuth } from "../../context/auth-context";
+import {Link} from "react-router-dom";
 
 function Cart () {
   const { shoppingCart } = useAuth();
@@ -13,14 +14,16 @@ function Cart () {
   },[shoppingCart])
 
   return (
-    <a className="bouble-link white txt-orange" href="#">
-      <i className="fa fa-shopping-basket"><span
-        style={{
-          fontSize: '12px',
-          fontWeight: '700',
-          color: '#2fb18d',
-          marginLeft: '3px'}}>{cartLength}</span></i>
-    </a>
+    <Link className="bouble-link white txt-orange" to="/basket" >
+        <i className="fa fa-shopping-basket"><span
+          style={{
+            fontSize: '12px',
+            fontWeight: '700',
+            color: '#2fb18d',
+            marginLeft: '3px'}}>{cartLength}</span></i>
+    </Link>
+
+
   )
 }
 

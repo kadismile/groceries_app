@@ -3,7 +3,7 @@ import {getProductVariant} from "../../utils/auth-client";
 import {PageLoader} from "../lib";
 import {Link} from "react-router-dom";
 import {formatTotal, oldPrice} from "../../utils/helpers";
-import {CartButton} from "./cart_button";
+import {BigCartButton, CartButton} from "./cart_button";
 
 function ProductDetail (props) {
   const url = process.env.REACT_APP_BACKEND_URL
@@ -47,7 +47,7 @@ function ProductDetail (props) {
           <div className="form-mini-divider" />
           <div className="form-mini-divider" />
           <div className="form-mini-divider" />
-          <button className="button circle block orange"><i className="fa fa-shopping-basket" /> Add to Cart</button>
+           <CartButton  product={product} bigButton={true} />
           <div className="form-mini-divider" />
           <div className="panel">
             <h3 className="title">Description</h3>
