@@ -355,6 +355,7 @@ nav.menu ul.main-menu>li li a{
     font-weight: 600;
     display: inline-block;
     vertical-align: top;
+    margin-right: 20px;
 }
 .provide-item h4{
     margin-bottom: 0;
@@ -2180,7 +2181,7 @@ select.form-element{
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    bottom: 30px;
+    bottom: 77px;
     right: 30px;
     line-height: 46px;
     text-align: center;

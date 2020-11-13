@@ -40,14 +40,20 @@ function AuthProvider(props) {
     authClient.logout();
     setData(null)
   }, [setData]);
-  
-  
-  const user = data?.user;
 
-  const value = React.useMemo(() => ({user, login, logout, register}), [
+  const addToCart = React.useCallback(data => {
+    setData({shoppingCart: data})
+  }, [setData]);
+  
+
+  const user = data?.user;
+  const shoppingCart = data?.shoppingCart;
+  const value = React.useMemo(() => ({user, login, logout, register, addToCart, shoppingCart}), [
     login,
     logout,
     register,
+    addToCart,
+    shoppingCart,
     user,
   ])
 

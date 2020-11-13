@@ -2,3 +2,10 @@
     margin-top: 210px;
 }
 
+.basket-button {
+    width: 40px;
+    font-size: 17px;
+    margin-top: 2px;
+    color: #ff7854;
+    font-weight: 800;
+}

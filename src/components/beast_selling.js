@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {getRandomProducts} from '../utils/auth-client'
+import {Link} from "react-router-dom";
+import {CartButton} from "./products/cart_button";
 
 
 function BestSelling () {
@@ -27,12 +29,15 @@ function BestSelling () {
               <>
                 <div className="news-list-item">
                   <div className="list-image">
-                    <img className="product-image" alt={product.name} src={image} width={100} height={100} />
+                    <img className="product-image" alt={product.name} crossOrigin src={image} width={100} height={100} />
                   </div>
                   <div className="list-content">
-                    <h2 className="list-title max-w-80"><a href="product-detail.html"></a> {product.name}</h2>
-                    <span className="item-price">₦{product.price}</span>
-                    <a href="product-basket.html" className="add-chart"><i className="fa fa-shopping-cart" /></a>
+                    <h2 className="list-title max-w-80">
+                      <Link to={`/product-variant/`+`${product._id}`}> {product.name} </Link>
+                    </h2>
+                      <span className="item-price">₦{product.price}</span>
+                    <CartButton product={product} />
+
                   </div>
                 </div>
                 <div className="form-mini-divider" />

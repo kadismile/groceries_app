@@ -3,6 +3,7 @@ import {getProductVariant} from "../../utils/auth-client";
 import {PageLoader} from "../lib";
 import {Link} from "react-router-dom";
 import {formatTotal, oldPrice} from "../../utils/helpers";
+import {BigCartButton, CartButton} from "./cart_button";
 
 function ProductDetail (props) {
   const url = process.env.REACT_APP_BACKEND_URL
@@ -24,7 +25,7 @@ function ProductDetail (props) {
     }, 1000)
 
   }, [props.match.params.variant_id])
-  const image = product.productVariantImage ? `${url}/${product.productVariantImage}` : "/img/placeholder-image.png"
+  const image = product && product.productVariantImage ? `${url}/${product.productVariantImage}` : "/img/placeholder-image.png"
   return (
 
     !product ? <PageLoader />  :
@@ -46,7 +47,7 @@ function ProductDetail (props) {
           <div className="form-mini-divider" />
           <div className="form-mini-divider" />
           <div className="form-mini-divider" />
-          <button className="button circle block orange"><i className="fa fa-shopping-basket" /> Add to Cart</button>
+           <CartButton  product={product} bigButton={true} />
           <div className="form-mini-divider" />
           <div className="panel">
             <h3 className="title">Description</h3>
@@ -68,7 +69,7 @@ function ProductDetail (props) {
                     <div className="news-list-item">
                       <div className="list-image">
                         <Link to={`/product-variant/`+`${prVariant._id}`}>
-                          <img alt="" src={image} width={100} height={100}  />
+                          <img alt="" crossOrigin src={image} width={100} height={100}  />
                         </Link>
                       </div>
                       <div className="list-content">
@@ -82,7 +83,7 @@ function ProductDetail (props) {
                           </Link>
 
                         </span>
-                        <a href="product-basket.html" className="add-chart"><i className="fa fa-shopping-cart" /></a>
+                        <CartButton product={prVariant} />
                       </div>
                     </div>
                     <div className="form-mini-divider" />
