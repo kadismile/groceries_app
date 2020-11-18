@@ -8,6 +8,8 @@ import {Link} from "react-router-dom";
 
 function Basket () {
   const {addToCart} = useAuth()
+  let user = localStorage.getItem("user")
+  user = JSON.parse(user)
   const url = process.env.REACT_APP_BACKEND_URL
   const [loader, setLoader] = useState(true)
   const [cart, setCart] = useState([])
@@ -72,17 +74,16 @@ function Basket () {
     loader ? <PageLoader /> :
     <main>
       <section className="container">
-        {cart.length ? <span style={{fontWeight: "bold"}}>TOTAL:  {total()}</span> : ""}
-
+        {cart.length ? <span style={{fontWeight: "bold"}}>TOTAL:  {total()} </span>  : ""}
+        <br/>
+        <br/>
         {
           cart.length ?
           cart.map((product, index)=> {
             const image = product && product.productVariantImage ? `${url}/${product.productVariantImage}` : "/img/placeholder-image.png"
             return (
               <>
-                <br/>
 
-                <br/>
               <div className="expandable-item accordion" data-group="accordion1" key={index}>
                 <div className="expandable-header">
                   <span className="pull-left">
@@ -94,31 +95,6 @@ function Basket () {
                   </div>
                   <i className="list-arrow fa fa-angle-down" />
                 </div>
-                {/*<div className="expandable-content">
-                  <div className="padding-content">
-                    <img src={image} alt="" />
-                    <div className="form-row-group">
-                      <div className="form-row no-padding">
-                        <select className="form-element">
-                          <option value>Select size...</option>
-                          <option value="S">Small</option>
-                          <option value="M" selected>Medium</option>
-                          <option value="L">Large</option>
-                        </select>
-                      </div>
-                      <div className="form-row no-padding">
-                        <select className="form-element">
-                          <option value>Piece...</option>
-                          <option value={1}>1</option>
-                          <option value={2} selected>2</option>
-                          <option value={3}>3</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="form-mini-divider" />
-                    <p className="mb-15">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took </p>
-                  </div>
-                </div>*/}
                 <div className="expandable-content">
                 <div className="padding-content">
                   <div className="news-list-item">
@@ -137,7 +113,7 @@ function Basket () {
 
                     </div>
                   </div>
-                  <div className="form-mini-divider" />
+
                 </div>
                 </div>
 
@@ -161,13 +137,17 @@ function Basket () {
           cart.length ?
           <>
             <div className="form-mini-divider" />
-            <a href="#" className="button circle block orange"><i className="fa fa-shopping-basket" /> Checkout</a>
+            {
+              user ? <Link className="button circle block orange" to="/checkout" > <i className="fa fa-shopping-basket" /> checkout </Link> :
+                <Link className="button circle block orange" to="/add-user" > <i className="fa fa-map-marker" /> Add Shipping  Address </Link>
+            }
+
             <div className="form-mini-divider" />
             <div className="form-divider" />
             <div className="form-label-divider"><span>OR</span></div>
             <div className="form-divider" />
             <div className="txt-center">
-              <a href="product-list.html">Continue shopping <i className="fa fa-arrow-right" /></a>
+              <Link to="/" > Continue shopping <i className="fa fa-arrow-right" /> </Link>
             </div>
           </> : ""
         }

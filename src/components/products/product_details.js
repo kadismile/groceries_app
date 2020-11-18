@@ -3,7 +3,7 @@ import {getProductVariant} from "../../utils/auth-client";
 import {PageLoader} from "../lib";
 import {Link} from "react-router-dom";
 import {formatTotal, oldPrice} from "../../utils/helpers";
-import {BigCartButton, CartButton} from "./cart_button";
+import {CartButton} from "./cart_button";
 
 function ProductDetail (props) {
   const url = process.env.REACT_APP_BACKEND_URL

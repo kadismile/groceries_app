@@ -31,7 +31,8 @@
     "sweetalert2": "^10.8.1",
     "toastr": "^2.1.4",
     "lodash": "^4.17.15",
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "use-places-autocomplete": "^1.3.10"
   },
   "scripts": {
     "start": "react-scripts start",

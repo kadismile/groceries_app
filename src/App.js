@@ -9,7 +9,7 @@ function App() {
   const {user} = useAuth();
   let cart =  window.localStorage.getItem("cart");
   if (!cart) {
-    window.localStorage.setItem("cart", "");
+    window.localStorage.setItem("cart", []);
   }
   return (
     <React.Suspense fallback={<FullPageSpinner />}>

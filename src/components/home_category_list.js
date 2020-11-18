@@ -10,52 +10,49 @@ function HomeCategoryList () {
       </div>
       <div className="c-wrapper">
         <div className="col-3 text-center mb-15">
-          <a href="product-list.html">
-            <div className="provide-item blue-bg">
-              <img src="/img/icon5.png" alt="" />
-              <h4 className="w-text">Groceries</h4>
+          <Link to="/category/MndraxsrwtsFdGa98K">
+            <div className="provide-item">
+              <img src="/img/groceries.png" alt="" style={{width: "120%"}}/>
             </div>
+          </Link>
+          <a href="product-list.html">
+
           </a>
         </div>
         <div className="col-3 center-item text-center mb-15">
-          <Link to="/category/u3IDfiUVMoAHwM5grC">
-            <div className="provide-item blue-bg">
-              <img src="/img/drinks.png" alt="" />
-              <h4 className="w-text">Drinks</h4>
+          <Link to="/category/SgCBZ8BI3QMzz7WOIV">
+            <div className="provide-item">
+              <img src="/img/drinks-&-wine.png" alt="" style={{width: "120%"}} />
             </div>
           </Link>
         </div>
         <div className="col-3 text-center mb-15">
-          <a href="product-list.html">
-            <div className="provide-item blue-bg">
-              <img src="/img/icon3.png" alt="" />
-              <h4 className="w-text">Sports</h4>
+          <Link to="/category/FuywtskVFuf748Sagf">
+            <div className="provide-item">
+              <img src="/img/food-items.png" alt="" style={{width: "120%"}} />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="col-3 text-center">
-          <a href="product-list.html">
-            <div className="provide-item blue-bg">
-              <img src="/img/icon4.png" alt="" />
-              <h4 className="w-text">Furniture</h4>
+          <Link to="/category/V6ggberWqV7J00rjBK">
+            <div className="provide-item">
+              <img src="/img/body-care.png" alt="" style={{width: "120%"}} />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="col-3 center-item text-center">
-          <a href="product-list.html">
-            <div className="provide-item blue-bg">
-              <img src="/img/icon1.png" alt="" />
-              <h4 className="w-text">Food</h4>
+          <Link to="/category/V6ggberWqV7J00rjBK">
+            <div className="provide-item ">
+              <img src="/img/pharmacy.png" alt="" style={{width: "120%"}} />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="col-3 text-center">
-          <a href="product-list.html">
-            <div className="provide-item blue-bg">
-              <img src="/img/icon6.png" alt="" />
-              <h4 className="w-text">Grocery</h4>
+          <Link to="/category/Hbkrteg443Bahjued7">
+            <div className="provide-item ">
+              <img src="/img/electronics.png" alt="" style={{width: "120%"}} />
             </div>
-          </a>
+          </Link>
         </div>
       </div>
 

@@ -273,7 +273,7 @@ nav.menu ul.main-menu>li li a{
 [5. Header]
 *------------------------------------------------------------------*/
 .banner-div{
-    background: url(../img/banner.png) center no-repeat;
+    background: url(../img/slider.jpg) center no-repeat;
     background-size: cover;
     margin-top: 70px;
     border-radius: 15px
@@ -286,7 +286,7 @@ nav.menu ul.main-menu>li li a{
     margin-top: 0;
     font-size: 16px;
     font-weight: 700;
-    color: #13287e
+    color: #13287e;
 }
 .c-btn{
     padding: 8px 15px;
@@ -320,10 +320,11 @@ nav.menu ul.main-menu>li li a{
 .purpule-bg{background: #544df3}
 .blue-bg{background: #195bd5;}
 .pink-bg{background: #ff505d !important}
+.purple-bg{background: #7a7cf2 !important}
 .orange-bg{background: #ffad3d}
 .creamy-bg{background: #fef5f3 !important}
 .provide-item{
-    padding: 20px 10px;
+    padding: 0px 8px;
     border-radius: 10px;
 }
 .col-2{
@@ -334,8 +335,8 @@ nav.menu ul.main-menu>li li a{
     border: 2px solid #2eb18d !important
 }
 .provide-item img{
-    max-width: 45px;
-    margin-bottom: 10px;
+    /*max-width: 45px;
+    margin-bottom: 10px;*/
 }
 .rating-stars{
     padding-left: 10px;
@@ -390,7 +391,7 @@ nav.menu ul.main-menu>li li a{
 }
 .text-center{text-align: center;}
 .mt-30{margin-top: 30px !important}
-.mb-15{margin-bottom: 15px !important}
+.mb-15{margin-bottom: -10px !important}
 .mb-10{margin-bottom: 10px !important}
 .mt-0{margin-top: 0px !important}
 .mb-0{margin-bottom: 0px !important}
