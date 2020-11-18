@@ -18,6 +18,8 @@ import {ProductDetail} from "./components/products/product_details";
 import {ProductDescription} from "./components/product_description";
 import {Cart} from "./components/products/cart";
 import {Basket} from "./components/products/basket";
+import {AddUser} from "./components/products/add_user";
+import {Checkout} from "./components/products/checkout";
 
 
 function ErrorFallback({error}) {
@@ -48,8 +50,10 @@ function AuthenticatedApp() {
             <Route path="/" exact render={props => <Home {...props} />} />
             <Route path="/product/:product_id" exact render={props => <ProductVariants {...props} />} />
             <Route path="/product-variant/:variant_id" exact render={props => <ProductDetail {...props} />} />
-            <Route path="/category/:category_name" exact render={props => <ProductCatList {...props} />} />
+            <Route path="/category/:productTypeId" exact render={props => <ProductCatList {...props} />} />
             <Route path="/basket" exact render={props => <Basket {...props} />} />
+            <Route path="/add-user" exact render={props => <AddUser {...props} />} />
+            <Route path="/checkout" exact render={props => <Checkout {...props} />} />
             <Route path="*" exact render={props => <NotFoud {...props} />} />
           </Switch>
             <Cart />

@@ -4,17 +4,14 @@ import {queryCache} from "react-query";
 import toastr from "toastr";
 
 async function handleUserResponse(data) {
-  window.localStorage.setItem(localStorageKey, data.token);
-  const user = await getUser();
-  if (user) {
-    return user
-  }
+  window.localStorage.setItem("user", JSON.stringify(data.data));
+  return data
 }
 function login({email, password}) {
   return client(url.LOGIN_URL, {data: {email, password}}).then(handleUserResponse)
 }
-function register({username, password}) {
-  return client('register', {data: {username, password}}).then(
+function register(data) {
+  return client(`${url.REACT_APP_BACKEND_URL_LOCAL}/api/v1/auth/user/register`, {data}).then(
     handleUserResponse,
   )
 }
@@ -47,7 +44,15 @@ function getVariants(data) {
 }
 
 function getProductVariant(data) {
-  return client(`${url.BASE_URL}/products//variant/${data}`).then( data => data)
+  return client(`${url.BASE_URL}/products/variant/${data}`).then( data => data)
+}
+
+function searchProducts(data) {
+  return client(`${url.BASE_URL}/products/search`, {data}).then( data => data)
+}
+
+function orderCreate(data) {
+  return client(`${url.REACT_APP_BACKEND_URL_LOCAL}/api/v1/orders/create`, {data}).then( data => data)
 }
 
 
@@ -71,5 +76,5 @@ function logout() {
 
 
 export {login, register, getToken, isLoggedIn, getUser, getRandomProducts,
-  getProductCategory, getVariants, getProductVariant}
+  getProductCategory, getVariants, getProductVariant, searchProducts, orderCreate}
 export {logout} from './api-client'

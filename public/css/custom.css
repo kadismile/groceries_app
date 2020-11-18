@@ -9,3 +9,32 @@
     color: #ff7854;
     font-weight: 800;
 }
+
+.addGroup__error {
+    color: red;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.google_autocomplete {
+    background: #fbfbfb;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 92%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+.list-search {
+    list-style: none;
+    padding: 6px;
+    border-bottom: 1px solid #efecec;
+    cursor: pointer;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #346de0;
+}

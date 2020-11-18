@@ -7,10 +7,13 @@ function CartButton (props) {
 
   const displayCart = () => {
    let cart = localStorage.getItem('cart')
-   if (cart) {
+   if (cart && cart.length) {
      cart = JSON.parse(cart)
      let findProduct = cart.find( v => v._id === product._id)
+     console.log(findProduct)
      return !findProduct;
+   } else {
+     return true;
    }
  }
 
@@ -23,6 +26,7 @@ function CartButton (props) {
         item.total = item.count * item.price
       })
       localStorage.setItem('cart', JSON.stringify(item))
+      addToCart(item)
     } else {
       cart = JSON.parse(cart)
       let existingProduct = cart.find((data) => data._id === product._id)
@@ -44,13 +48,13 @@ function CartButton (props) {
       {
         !bigButton ?
           //small Button
-        !displayCart() ? <span className="cart-btn"  onClick={()=> addTocart() }> <i className="fa fa-shopping-basket" style={{color: "green"}} /></span> :
-          <span className="cart-btn" onClick={()=> addTocart() }> <i className="fa fa-shopping-basket" /></span>
+        !displayCart() ? <span className="cart-btn"  onClick={()=> addTocart() }> <i className="fa fa-check" style={{color: "green"}} /></span> :
+          <span className="cart-btn" onClick={()=> addTocart() }> <i className="fa fa-shopping-basket" style={{color: "#787ff3"}} /></span>
 
           :
           //Big Button
           !displayCart() ?
-            <button className="button circle block orange" style={{backgroundColor: "#2eb18d"}} onClick={()=> addTocart() } ><i className="fa fa-shopping-basket" /> Add to Cart</button> :
+            <button className="button circle block orange" style={{backgroundColor: "#2eb18d"}} onClick={()=> addTocart() } ><i className="fa fa-check" /> Added to Cart</button> :
             <button className="button circle block orange" onClick={()=> addTocart() } ><i className="fa fa-shopping-basket" /> Add to Cart</button>
       }
 
