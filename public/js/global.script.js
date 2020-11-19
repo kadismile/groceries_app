@@ -1,29 +1,29 @@
 "use strict";
 
-$(document).ready(function(){
+window.$(document).ready(function(){
 
-  $('.navi-menu-button').on('click', function(e){
+  window.$('.navi-menu-button').on('click', function(e){
     navMenuOpen();
   });
 
-  $('.nav-menu').on('click', function(e){
-    if ($(e.target).hasClass('nav-menu')){
+  window.$('.nav-menu').on('click', function(e){
+    if (window.$(e.target).hasClass('nav-menu')){
       navMenuClose();
     }
   });
 
-  $('nav.menu ul.main-menu>li>a').on('click', function(e){
-    var that = $(this);
+  window.$('nav.menu ul.main-menu>li>a').on('click', function(e){
+    var that = window.$(this);
     if (that.parent().find('ul:first').length)
     {
       e.preventDefault();
       if (!that.parent().hasClass('active'))
       {
-        $('nav.menu ul.main-menu ul').slideUp('fast',function(){
-          $('nav.menu ul.main-menu > li').removeClass('active');
+        window.$('nav.menu ul.main-menu ul').slideUp('fast',function(){
+          window.$('nav.menu ul.main-menu > li').removeClass('active');
         });
 
-        $('nav.menu ul li a span').removeClass('fa-angle-up').addClass('fa-angle-down');
+        window.$('nav.menu ul li a span').removeClass('fa-angle-up').addClass('fa-angle-down');
 
 
         that.parent().find('ul:first').slideDown('fast',function(){
@@ -36,71 +36,71 @@ $(document).ready(function(){
       {
 
         that.parent().find('ul:first').slideUp('fast',function(){
-          $(this).parent().removeClass('active');
+          window.$(this).parent().removeClass('active');
         });
         that.find('span').removeClass('fa-angle-up').addClass('fa-angle-down');
       }
     }
     else
     {
-      $('nav.menu ul.main-menu ul').slideUp('fast');
-      $('nav.menu ul.main-menu > li').removeClass('active');
+      window.$('nav.menu ul.main-menu ul').slideUp('fast');
+      window.$('nav.menu ul.main-menu > li').removeClass('active');
       that.parent().addClass('active');
     }
   });
 
 
-  $('.tab-item .fix-width .menu-item').css({'width': 100/$('.tab-item .fix-width .menu-item').length+'%'});
+  window.$('.tab-item .fix-width .menu-item').css({'width': 100/window.$('.tab-item .fix-width .menu-item').length+'%'});
 
-  if ($('.wizard').length)
+  if (window.$('.wizard').length)
   {
     wizardFixHeight();
-    $(window).resize();
+    window.$(window).resize();
   }
 
 
 
-  if ($('.animated-text').length)
+  if (window.$('.animated-text').length)
     animateText();
 
 });
 
 
-$(".wrapper-inline").on("scroll", function(e) {
+window.$(".wrapper-inline").on("scroll", function(e) {
   if (this.scrollTop > 150) {
-    $('header.no-background').addClass("set-bg");
+    window.$('header.no-background').addClass("set-bg");
   } else {
-    $('header.no-background').removeClass("set-bg");
+    window.$('header.no-background').removeClass("set-bg");
   }
 
 });
 
 var navMenuOpen = function(){
-  $('.navi-menu-button').addClass('focused');
+  window.$('.navi-menu-button').addClass('focused');
 
-  $('div.nav-menu').fadeIn(50,function(e){
-    $('nav.menu').addClass('opened');
+  window.$('div.nav-menu').fadeIn(50,function(e){
+    window.$('nav.menu').addClass('opened');
   });
 }
 
 var navMenuClose = function(){
-  $('.navi-menu-button').removeClass('focused');
+  window.$('.navi-menu-button').removeClass('focused');
 
-  $('nav.menu').removeClass('opened');
-  $('div.nav-menu').fadeOut(200);
+  window.$('nav.menu').removeClass('opened');
+  window.$('div.nav-menu').fadeOut(200);
 }
 
 var wizardFixHeight = function(){
-  $(window).on('resize', function(e){
-    $('.wizard .wizard-item').height($(window).height()-50);
+  window.$(window).on('resize', function(e){
+    window.$('.wizard .wizard-item').height(window.$(window).height()-50);
   });
 }
 
 var animateText = function(){
-  $('.vertical-center').css({'margin-top':$(window).height()/2 - $('.vertical-center').height()/2});
-  $('.animated-text').removeClass('zero-opacity');
-  $('[data-transation]').each(function(e,i){
-    var that = $(this);
+  window.$('.vertical-center').css({'margin-top':window.$(window).height()/2 - window.$('.vertical-center').height()/2});
+  window.$('.animated-text').removeClass('zero-opacity');
+  window.$('[data-transation]').each(function(e,i){
+    var that = window.$(this);
     that.addClass('hide');
 
     var transation = that.attr('data-transation');
@@ -119,95 +119,95 @@ var animateText = function(){
 
 
 /*sweet checkbox scripts*/
-$('.sweet-check :checkbox:checked').each(function(e,i){
-  $(this).parent().addClass('checked');
+window.$('.sweet-check :checkbox:checked').each(function(e,i){
+  window.$(this).parent().addClass('checked');
 });
 
 
-$(document).on('click', '.sweet-check', function(){
-  if ($(this).hasClass('checked'))
+window.$(document).on('click', '.sweet-check', function(){
+  if (window.$(this).hasClass('checked'))
   {
-    $(this).removeClass('checked');
-    $(this).find('input').prop('checked', false);
+    window.$(this).removeClass('checked');
+    window.$(this).find('input').prop('checked', false);
   }
   else
   {
-    $(this).addClass('checked');
-    $(this).find('input').prop('checked', true);
+    window.$(this).addClass('checked');
+    window.$(this).find('input').prop('checked', true);
   }
 
-  //console.log($(this).find('input').prop('checked'));
+  //console.log(window.$(this).find('input').prop('checked'));
 });
 
-$(document).on('click','[data-loader]', function(){
-  $('.sweet-loader').show().addClass('show');
+window.$(document).on('click','[data-loader]', function(){
+  window.$('.sweet-loader').show().addClass('show');
 });
 
 
 /*expandable list scrips****/
-$(document).on('click', '.expandable-item .expandable-header', function(){
-  if ($(this).parent().hasClass('accordion'))
+window.$(document).on('click', '.expandable-item .expandable-header', function(){
+  if (window.$(this).parent().hasClass('accordion'))
   {
-    if ($(this).parent().hasClass('active'))
+    if (window.$(this).parent().hasClass('active'))
     {
-      $(this).parent().removeClass('active');
-      $(this).parent().find('.expandable-content').attr('style','');
+      window.$(this).parent().removeClass('active');
+      window.$(this).parent().find('.expandable-content').attr('style','');
     }
     else
     {
-      var accordionGroup = $(this).parent().attr('data-group');
-      $('[data-group="'+accordionGroup+'"]').removeClass('active');
-      $('[data-group="'+accordionGroup+'"]').find('.expandable-content').attr('style','');
-      $(this).parent().find('.expandable-content').css({'max-height':$(this).parent().find('.expandable-content')[0].scrollHeight});
-      $(this).parent().addClass('active');
+      var accordionGroup = window.$(this).parent().attr('data-group');
+      window.$('[data-group="'+accordionGroup+'"]').removeClass('active');
+      window.$('[data-group="'+accordionGroup+'"]').find('.expandable-content').attr('style','');
+      window.$(this).parent().find('.expandable-content').css({'max-height':window.$(this).parent().find('.expandable-content')[0].scrollHeight});
+      window.$(this).parent().addClass('active');
     }
   }
   else
   {
-    if ($(this).parent().hasClass('active'))
-      $(this).parent().find('.expandable-content').attr('style','');
+    if (window.$(this).parent().hasClass('active'))
+      window.$(this).parent().find('.expandable-content').attr('style','');
     else
-      $(this).parent().find('.expandable-content').css({'max-height':$(this).parent().find('.expandable-content')[0].scrollHeight});
+      window.$(this).parent().find('.expandable-content').css({'max-height':window.$(this).parent().find('.expandable-content')[0].scrollHeight});
 
-    $(this).parent().toggleClass('active');
+    window.$(this).parent().toggleClass('active');
   }
 });
 
 
 
-$(document).on('click', '.tab-item .menu-item', function(e){
+window.$(document).on('click', '.tab-item .menu-item', function(e){
   e.preventDefault();
-  var tabContentId = $(this).attr('data-content');
+  var tabContentId = window.$(this).attr('data-content');
 
-  $(this).parents('.tab-item').find('.menu-item').removeClass('active');
-  $(this).addClass('active');
+  window.$(this).parents('.tab-item').find('.menu-item').removeClass('active');
+  window.$(this).addClass('active');
 
-  $(this).parents('.tab-item').find('.content-item').removeClass('active');
-  $('#'+tabContentId).addClass('active');
+  window.$(this).parents('.tab-item').find('.content-item').removeClass('active');
+  window.$('#'+tabContentId).addClass('active');
 });
 
 
 /*post item scripts **************/
-$(document).on('click', '.post-item .post-share > i', function(e){
+window.$(document).on('click', '.post-item .post-share > i', function(e){
   e.preventDefault();
-  $(this).parent().find('.social-links').fadeToggle('fast');
+  window.$(this).parent().find('.social-links').fadeToggle('fast');
 });
 
 
 /*popup actions ******************/
-$(document).on('click', '[data-dismiss="true"]', function(){
-  $(this).parents('.popup-overlay').fadeOut('fast');
+window.$(document).on('click', '[data-dismiss="true"]', function(){
+  window.$(this).parents('.popup-overlay').fadeOut('fast');
 });
 
-$(document).on('click', '[data-popup]', function(){
-  var modalId = $(this).attr('data-popup');
-  $('#'+modalId).fadeIn('fast');
+window.$(document).on('click', '[data-popup]', function(){
+  var modalId = window.$(this).attr('data-popup');
+  window.$('#'+modalId).fadeIn('fast');
 });
 
-$(document).on('click', '.popup-overlay', function(e){
-  if ($(e.target).hasClass('popup-overlay'))
+window.$(document).on('click', '.popup-overlay', function(e){
+  if (window.$(e.target).hasClass('popup-overlay'))
   {
-    $(this).fadeOut('fast');
+    window.$(this).fadeOut('fast');
   }
 });
 
@@ -217,18 +217,18 @@ $(document).on('click', '.popup-overlay', function(e){
 /*search popup actions ************/
 
 var openSearchPopup = function(){
-  $('.search-form').fadeIn('fast');
-  $('.search-form input').focus();
+  window.$('.search-form').fadeIn('fast');
+  window.$('.search-form input').focus();
 }
 
 var closeSearchPopup = function(){
-  $('.search-form').fadeOut('fast');
+  window.$('.search-form').fadeOut('fast');
 }
 
-$(document).on('click', '[data-search="open"]', function(){
+window.$(document).on('click', '[data-search="open"]', function(){
   openSearchPopup();
 });
 
-$(document).on('click', '[data-search="close"]', function(){
+window.$(document).on('click', '[data-search="close"]', function(){
   closeSearchPopup();
 });
