@@ -98,7 +98,7 @@ function ProductDetail (props) {
         }
         <footer>
           <div className="container">
-            <p>Copyright © All Right Reserved</p>
+            <p>Copyright © My Groceries2go by Struxt</p>
           </div>
         </footer>
       </main>

@@ -4,6 +4,7 @@ import {formatTotal} from "../utils/helpers";
 import {CartButton} from "./products/cart_button";
 import _ from 'lodash'
 import {searchProducts} from "../utils/auth-client";
+import {PageLoader} from "./lib";
 
 
 
@@ -16,12 +17,12 @@ function Search () {
     e.preventDefault()
     setSearch(e.target.value)
     if (search.length > 3) {
-      console.log("its greate ___")
+      setSearchResults([])
       const textSearch = _.debounce( async () => {
         let data = {
           "searchTerm": search,
           "query": {"limit": 10},
-          "type": "productvariants"
+          "type": "products"
         }
         let results = await searchProducts(data)
         setSearchResults([])
@@ -52,7 +53,7 @@ function Search () {
       <form>
         <div className="search-input">
           <input type="text" name="serach" onChange={(e) => handleChange(e)} className="form-element" placeholder="Search..." />
-          <button type="submit" className="search-input-btn"><i className="fa fa-arrow-right" /></button>
+          {/*<button type="submit" className="search-input-btn"><i className="fa fa-arrow-right" /></button>*/}
         </div>
       </form>
       {/*<div className="popular-search">
@@ -73,27 +74,22 @@ function Search () {
           <div>
             {
               searchResults.map((prVariant, index)=> {
-                const image = prVariant.productVariantImage ? `${url}/${prVariant.productVariantImage}` : "/img/placeholder-image.png"
+                const image = prVariant.productImage ? `${url}/${prVariant.productImage}` : "/img/placeholder-image.png"
                 return (
                   <>
                     <div className="news-list-item" key={index}>
                       <div className="list-image">
-                        <Link to={`/product-variant/`+`${prVariant._id}`}>
+                        <Link to={`/product/`+`${prVariant._id}`}>
                           <img alt="" crossOrigin src={image} width={100} height={100}  />
                         </Link>
                       </div>
                       <div className="list-content">
                         <h2 className="list-title max-w-80">
-                          <Link to={`/product-variant/`+`${prVariant._id}`} id="top"> {prVariant.name} </Link>
+                          <Link to={`/product/`+`${prVariant._id}`} id="top"> {prVariant.name} </Link>
                         </h2>
                         <span className="item-price">
-                          <Link to={`/product-variant/`+`${prVariant._id}`} id="top">
-                            <span style={{color: "black", fontWeight: '400'}}>₦ {formatTotal(prVariant.price)}
-                            </span>
-                          </Link>
-
+                          <Link to={`/product/`+`${prVariant._id}`} id="top"> </Link>
                         </span>
-                        <CartButton product={prVariant} />
                       </div>
                     </div>
                     <div className="form-mini-divider" />
@@ -104,7 +100,8 @@ function Search () {
 
           </div>
         </section> :
-        ""
+        search.length > 2 && !searchResults.length ?
+        <PageLoader/> : ""
       }
     </div>
   )

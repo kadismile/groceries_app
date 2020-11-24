@@ -19,7 +19,7 @@ function BestSelling () {
     <section className="container">
       <div className="section-head">
         <h4 className="title-main">Best Selling Items</h4>
-        <a className="c-btn" href="#">more</a>
+       {/* <a className="c-btn" href="#">more</a>*/}
       </div>
       <div>
         {

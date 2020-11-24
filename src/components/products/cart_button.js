@@ -49,7 +49,7 @@ function CartButton (props) {
         !bigButton ?
           //small Button
         !displayCart() ? <span className="cart-btn"  onClick={()=> addTocart() }> <i className="fa fa-check" style={{color: "green"}} /></span> :
-          <span className="cart-btn" onClick={()=> addTocart() }> <i className="fa fa-shopping-basket" style={{color: "#787ff3"}} /></span>
+          <span className="cart-btn" onClick={()=> addTocart() }> <i className="fa fa-shopping-basket" style={{color: "#af40d9"}} /></span>
 
           :
           //Big Button

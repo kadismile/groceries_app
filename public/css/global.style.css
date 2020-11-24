@@ -567,7 +567,7 @@ header.with-search-icon .page-title{
 .navi-menu-button em{
     width: 24px;
     height: 2px;
-    background-color: #4c4c4c;
+    background-color: #af40d9;
     display: block;
     position: absolute;
     border-radius: 30px;
@@ -671,7 +671,7 @@ div.container{
     position: absolute;
     line-height: 40px;
     width: 24px;
-    color: #ff7854
+    color: #af40d9
 }
 .form-row-group.with-icons .form-row .form-element{
     padding-left: 24px;
@@ -751,7 +751,7 @@ select.form-element{
     box-shadow: none;
 }
 .button.orange{
-    background-color: #ff7854;
+    background-color: #af40d9;
     color: #FFF;
     border-color:transparent;
     -webkit-box-shadow: none;
@@ -2031,8 +2031,8 @@ select.form-element{
     -o-text-overflow: ellipsis;
     -ms-text-overflow: ellipsis;
     white-space: nowrap;
-    color: #525252;
-    font-weight: 700;
+    color: #13287e;
+    font-weight: 400;
 }
 .title-main{
     margin:10px 0px;
@@ -2364,7 +2364,7 @@ White 	/	.white			#FFFFFF
     text-align: right;
 }
 .txt-orange{
-    color: #2eb18d;
+    color: #af40d9;
 }
 .txt-red{
     color: #F34954;
