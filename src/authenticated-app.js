@@ -15,7 +15,6 @@ import React from "react";
 import {ProductCatList} from "./components/products/product_category_list";
 import {ProductVariants} from "./components/products/product_variants";
 import {ProductDetail} from "./components/products/product_details";
-import {ProductDescription} from "./components/product_description";
 import {Cart} from "./components/products/cart";
 import {Basket} from "./components/products/basket";
 import {AddUser} from "./components/products/add_user";
