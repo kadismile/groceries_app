@@ -20,7 +20,6 @@ function SideBar () {
 
   const user = () => {
     let u = localStorage.getItem('user')
-    console.log("USER _______",u)
     if (u) {
       u = JSON.parse(u)
       return u
@@ -52,8 +51,8 @@ function SideBar () {
             {
               user() ?
               <>
-                <span>john doe</span>
-                <span>johndoe@example.com</span>
+                <span>{user().fullName}</span>
+                <span>{user().email}</span>
               </> : ""
             }
           </a>
@@ -76,12 +75,12 @@ function SideBar () {
                 </li>
                 <li>
                   <Link to="/change-password" onClick={()=> closeSideMenu()}>
-                    <img src="/img/i4.png" alt="" /> change Password
+                    <img src="/img/i3.png" alt="" /> change Password
                   </Link>
                 </li>
                   <li>
                     <Link to="/change-password" onClick={()=> closeSideMenu()}>
-                      <img src="/img/i4.png" alt="" /> shipping Address
+                      <img src="/img/i8.png" alt="" /> shipping Address
                     </Link>
                   </li>
                 </>

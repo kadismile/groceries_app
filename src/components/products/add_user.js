@@ -289,13 +289,6 @@ function AddUser () {
           )}
         </div>
 
-
-        {/*<div className="form-row">
-          <a href="#" className="button circle block blue"> <i className="fa fa-facebook" /> Sign up with FACEBOOK</a>
-        </div>
-        <div className="form-row">
-          <a href="#" className="button circle block red"><i className="fa fa-google" /> Sign up with GOOGLE</a>
-        </div>*/}
         <div className="form-divider" />
         <div className="form-row">
           {

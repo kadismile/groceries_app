@@ -6,7 +6,7 @@ function HomeCategoryList () {
     <section className="container">
       <div className="section-head">
         <h4 className="title-main">What Supplies We Provide?</h4>
-        <a className="c-btn" href="#">more</a>
+        {/*<a className="c-btn" href="#">more</a>*/}
       </div>
       <div className="c-wrapper">
         <div className="col-3 text-center mb-15">

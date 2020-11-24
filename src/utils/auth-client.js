@@ -4,11 +4,12 @@ import {queryCache} from "react-query";
 import toastr from "toastr";
 
 async function handleUserResponse(data) {
+  console.log("data ___", data)
   window.localStorage.setItem("user", JSON.stringify(data.data));
   return data
 }
-function login({email, password}) {
-  return client(url.LOGIN_URL, {data: {email, password}}).then(handleUserResponse)
+function login(data) {
+  return client(`${url.REACT_APP_BACKEND_URL_LOCAL}/api/v1/auth/mobile/login`, {data}).then(handleUserResponse)
 }
 function register(data) {
   return client(`${url.REACT_APP_BACKEND_URL_LOCAL}/api/v1/auth/user/register`, {data}).then(
@@ -51,6 +52,10 @@ function searchProducts(data) {
   return client(`${url.BASE_URL}/products/search`, {data}).then( data => data)
 }
 
+function getProductTypeById(data) {
+  return client(`${url.BASE_URL}/products/product-type/${data}`).then( data => data)
+}
+
 function orderCreate(data) {
   return client(`${url.REACT_APP_BACKEND_URL_LOCAL}/api/v1/orders/create`, {data}).then( data => data)
 }
@@ -75,6 +80,6 @@ function logout() {
 }
 
 
-export {login, register, getToken, isLoggedIn, getUser, getRandomProducts,
+export {login, register, getToken, isLoggedIn, getUser, getRandomProducts, getProductTypeById,
   getProductCategory, getVariants, getProductVariant, searchProducts, orderCreate}
 export {logout} from './api-client'

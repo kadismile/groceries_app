@@ -3,6 +3,7 @@ import {getVariants} from "../../utils/auth-client";
 import {PageLoader} from "../lib";
 import {Link} from "react-router-dom";
 import {CartButton} from "./cart_button";
+import {formatTotal} from "../../utils/helpers";
 
 function ProductVariants (props) {
   console.log("props ", props)
@@ -11,15 +12,17 @@ function ProductVariants (props) {
   const [product, setProduct] = useState("")
 
   useEffect(()=> {
+    setProduct([])
+    window.$('.search-form').fadeOut('fast');
     ( async ()=> {
       let data = await getVariants(productId)
       setProduct(data.data)
     })()
-  }, 1000)
+  }, [productId])
 
   return (
 
-    product.productVariants && product.productVariants.length ?
+    product && product.name ?
      <main>
       <section className="container">
         <div className="swiper-container">
@@ -56,7 +59,7 @@ function ProductVariants (props) {
                       <h2 className="list-title max-w-80">
                         <Link to={`/product-variant/`+`${prVariant._id}`}> {prVariant.name} </Link>
                     </h2>
-                      <span className="item-price"> ₦{prVariant.price}</span>
+                      <span className="item-price"> ₦{formatTotal(prVariant.price)}</span>
                       <CartButton product={prVariant} />
                     </div>
                   </div>
@@ -70,7 +73,7 @@ function ProductVariants (props) {
       </section>
       <footer>
         <div className="container">
-          <p>Copyright © All Right Reserved</p>
+          <p>Copyright © My Groceries2go by Struxt</p>
         </div>
       </footer>
     </main> : <PageLoader />
