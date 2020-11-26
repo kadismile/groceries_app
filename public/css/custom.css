@@ -38,3 +38,22 @@
     text-overflow: ellipsis;
     color: #346de0;
 }
+
+.box{
+    position: relative;
+    display: inline-block; /* Make the width of box same as image */
+}
+.box .text{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 194px;
+    top: 28%;
+    /* text-align: center; */
+    width: 47%;
+    float: left;
+    background-color: rgba(0,0,0,0.1);
+    padding: 11px;
+    border-radius: 7px
+}

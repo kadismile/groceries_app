@@ -69,17 +69,17 @@ function SideBar () {
               user() ?
                 <>
                 <li>
-                  <Link to="/orders" onClick={()=> closeSideMenu()}>
+                  <Link to="/" onClick={()=> closeSideMenu()}>
                     <img src="/img/i4.png" alt="" /> Orders
                   </Link>
                 </li>
                 <li>
-                  <Link to="/change-password" onClick={()=> closeSideMenu()}>
+                  <Link to="/" onClick={()=> closeSideMenu()}>
                     <img src="/img/i3.png" alt="" /> change Password
                   </Link>
                 </li>
                   <li>
-                    <Link to="/change-password" onClick={()=> closeSideMenu()}>
+                    <Link to="/" onClick={()=> closeSideMenu()}>
                       <img src="/img/i8.png" alt="" /> shipping Address
                     </Link>
                   </li>

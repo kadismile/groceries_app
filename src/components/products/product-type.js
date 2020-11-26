@@ -60,8 +60,8 @@ function ProductType (props) {
                   <>
                     <div key={index}>
                       <Link to={`/product/`+`${product._id}`}>
-                        <img className="product-image" alt="" crossOrigin src={image} />
-                        <h5 className="product-title" style={{textAlign: "center"}}>
+                        <img className="product-image" alt="" crossOrigin src={image} style={{width: "70%"}}/>
+                        <h5 className="product-title" style={{textAlign: "center", marginRight: "50px"}}>
                           {product.name}
                         </h5>
                       </Link>
