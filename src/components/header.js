@@ -14,7 +14,7 @@ function Header () {
   return (
     <header>
       <div className="search-button" data-search="open"><i style={{color: "#af40d9"}} className="fa fa-search" /></div>
-      <Link to="/"> <h1 className="page-title">MyGroceries2go</h1> </Link>
+      <Link to="/"> <img style={{width: "80%"}} src="/img/logo.png" alt=""/> </Link>
       <div className="navi-menu-button" onClick={(e)=> sideNav(e) }>
         <em />
         <em />
