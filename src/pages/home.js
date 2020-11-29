@@ -47,23 +47,18 @@ function Home () {
 
               <div className="box">
                 <img src="/img/slider1.jpg" alt=""/>
-                  <div className="text" style={{right: "216px"}}>
-                    <h4 className="title-main" style={{fontSize: "13px"}}>Order Your Groceries From One place with the best prices</h4>
-                  </div>
               </div>
 
              <div className="box">
                 <img src="/img/slider2.jpg" alt=""/>
-                <div className="text" style={{right: "185px"}}>
-                  <h4 className="title-main" style={{fontSize: "13px"}}>Your Liquor At affordable prices</h4>
-                </div>
+              </div>
+
+              <div className="box">
+                <img src="/img/slider3.jpg" alt=""/>
               </div>
 
               <div className="box">
                 <img src="/img/slider4.jpg" alt=""/>
-                <div className="text">
-                  <h4 className="title-main" style={{fontSize: "13px"}}>Body Care and Cosmetics for u and family</h4>
-                </div>
               </div>
 
 

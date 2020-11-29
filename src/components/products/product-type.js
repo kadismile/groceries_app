@@ -51,7 +51,7 @@ function ProductType (props) {
           <h4 className="title-main">{props.name}</h4>
         </div>
         <div className="product-two-column">
-          <hr/>
+
           <div className={productTypeId}>
             {
               products.map((product, index)=> {
@@ -72,7 +72,7 @@ function ProductType (props) {
               })
             }
           </div>
-          <hr/>
+          <hr style={{ border: "0", borderTop: "0.5px solid #e8e6e6"}}/>
         </div>
       </section>
   )
