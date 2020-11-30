@@ -1,13 +1,30 @@
-import React from 'react'
+/*
+import React, {useEffect, useState} from 'react'
+import {getUserOrders} from "../../utils/auth-client";
+
 
 function Orders () {
+  const [loader, setLoader] = useState(true)
+  const [orders, setProduct] = useState(true)
+
+  useEffect(()=> {
+    ( async ()=> {
+      let user = localStorage.getItem('user')
+      if (user){
+        user = JSON.parse(user)
+      }
+      console.log("userId", user)
+      let data = await getUserOrders(user._id)
+      setProduct(data.data)
+    })()
+  }, [])
   return (
     <main>
       <section className="container">
         <div className="form-divider" />
         <div className="form-label-divider"><span>ACCORDION (No margin)</span></div>
         <div className="form-divider" />
-        {/*expendable list item */}
+        {/!*expendable list item *!/}
         <div className="expandable-item accordion" data-group="accordion2">
           <div className="expandable-header">
             <i className="list-icon fa fa-adjust" />
@@ -26,4 +43,4 @@ function Orders () {
   )
 }
 
-export {Orders}
+export {Orders}*/

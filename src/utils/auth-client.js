@@ -60,6 +60,11 @@ function orderCreate(data) {
   return client(`${url.REACT_APP_BACKEND_URL_LOCAL}/api/v1/orders/create`, {data}).then( data => data)
 }
 
+function getUserOrders(data) {
+  console.log("data ___", data)
+  return client(`${url.REACT_APP_BACKEND_URL_LOCAL}/api/v1/orders/user-orders`, {data}).then( data => data)
+}
+
 
 function getToken() {
   let token = window.localStorage.getItem(localStorageKey);
@@ -81,5 +86,5 @@ function logout() {
 
 
 export {login, register, getToken, isLoggedIn, getUser, getRandomProducts, getProductTypeById,
-  getProductCategory, getVariants, getProductVariant, searchProducts, orderCreate}
+  getProductCategory, getVariants, getProductVariant, searchProducts, orderCreate, getUserOrders}
 export {logout} from './api-client'

@@ -4,7 +4,7 @@ import {formatTotal} from "../utils/helpers";
 import {CartButton} from "./products/cart_button";
 import _ from 'lodash'
 import {searchProducts} from "../utils/auth-client";
-import {PageLoader} from "./lib";
+import {PageLoader, SearchLoader} from "./lib";
 
 
 
@@ -101,7 +101,7 @@ function Search () {
           </div>
         </section> :
         search.length > 2 && !searchResults.length ?
-        <PageLoader/> : ""
+        <SearchLoader/>: ""
       }
     </div>
   )
