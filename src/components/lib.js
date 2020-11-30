@@ -77,6 +77,12 @@ function PageLoader() {
   )
 }
 
+function SearchLoader() {
+  return (
+    <img src="/img/search_loader.gif" className="search_loader" alt=""/>
+  )
+}
+
 const Link = styled(RouterLink)({
   color: "indigo",
   ':hover': {
@@ -138,5 +144,7 @@ export {
   FullPageSpinner,
   Link,
   Loader,
-  PageLoader
+  PageLoader,
+  SearchLoader
+
 }
