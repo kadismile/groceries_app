@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import toastr from "toastr";
 import usePlacesAutocomplete, {getGeocode, getLatLng} from "use-places-autocomplete";
 import useOnclickOutside from "react-cool-onclickoutside";
@@ -8,6 +8,10 @@ import {Redirect} from "react-router";
 
 
 function AddUser () {
+
+  useEffect(()=> {
+    localStorage.setItem('user', '')
+  }, [])
   const [formValues, setFormValues] = useState({
     username: "",
     email: "",
@@ -134,8 +138,8 @@ function AddUser () {
     formValues.accountBalance = 0
 
 
-    delete formValues.repeat_password
-    delete formValues.username
+    //delete formValues.repeat_password
+    //delete formValues.username
 
     let data = await register(formValues);
     setLoading(false)
@@ -144,7 +148,8 @@ function AddUser () {
       setLoading(false)
       setSuccess(true)
     } else {
-      toastr.error("Failed");
+      console.log(data)
+      toastr.error(`${data.error}`);
     }
   }
 
