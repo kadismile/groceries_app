@@ -69,7 +69,7 @@ function SideBar () {
               user() ?
                 <>
                 <li>
-                  <Link to="/" onClick={()=> closeSideMenu()}>
+                  <Link to="/orders" onClick={()=> closeSideMenu()}>
                     <img src="/img/i4.png" alt="" /> Orders
                   </Link>
                 </li>

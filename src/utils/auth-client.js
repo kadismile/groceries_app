@@ -61,7 +61,6 @@ function orderCreate(data) {
 }
 
 function getUserOrders(data) {
-  console.log("data ___", data)
   return client(`${url.REACT_APP_BACKEND_URL_LOCAL}/api/v1/orders/user-orders`, {data}).then( data => data)
 }
 
